@@ -2,12 +2,14 @@
 set -e
 
 # setup key
-mkdir -p ~/.ssh/
-echo "$DEPLOYKEY" >~/.ssh/id_rsa
-chmod 600 ~/.ssh/id_rsa
-ssh-keyscan github.com >>~/.ssh/known_hosts
+mkdir -p /root/.ssh/
+echo "${INPUT_DEPLOYKEY}" > /root/.ssh/id_rsa
+chmod 600 /root/.ssh/id_rsa
+ssh-keyscan -t rsa github.com >> /root/.ssh/known_hosts
+
 git config --global user.name '${INPUT_USERNAME}'
 git config --global user.email '${INPUT_EMAIL}'
+
 
 # setup hexo env
 npm i -g hexo-cli
@@ -34,8 +36,3 @@ if ${INPUT_IF_UPDATE_FILES}; then
         git push "${remote_repo}" HEAD:${INPUT_BRANCH}
     fi
 fi
-
-
-
-
-
