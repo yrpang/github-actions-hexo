@@ -7,8 +7,8 @@ echo "${INPUT_DEPLOYKEY}" > /root/.ssh/id_rsa
 chmod 600 /root/.ssh/id_rsa
 ssh-keyscan -t rsa github.com >> /root/.ssh/known_hosts
 
-git config --global user.name '${INPUT_USERNAME}'
-git config --global user.email '${INPUT_EMAIL}'
+git config --global user.name "${INPUT_USERNAME}"
+git config --global user.email "${INPUT_EMAIL}"
 
 
 # setup hexo env
