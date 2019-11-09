@@ -13,7 +13,7 @@ COPY README.md entrypoint.sh /
 
 RUN apk add --no-cache git
 RUN apk add --no-cache openssh
-RUN apk add --update curl
+RUN apk add --no-cache curl
 
 RUN chmod +x /entrypoint.sh
 
