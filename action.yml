@@ -1,0 +1,35 @@
+name: 'GitHub actions hexo'
+description: 'A GitHub action used to automatic generate publish hexo-based blog and clear Cloudflare cache.'
+author: 'yrpang'
+branding:
+  icon: cloud
+  color: green
+inputs:
+  deploykey:
+    description: 'The develop key of your GitHub Page repository'
+    required: true
+  username:
+    description: 'Your user name'
+    required: true
+  email:
+    description: 'Your email address'
+    required: true
+  if_update_files:
+    description: 'Whether update the source file after generate'
+    required: false
+    default: false
+  github_token:
+    description: 'Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}'
+    required: false
+    default: ''
+  branch:
+    description: 'The branch of the blog source code'
+    required: false
+    default: 'master'
+  if_update_cloudflare:
+    description: 'Whether update cloudflare'
+    required: false
+    default: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
