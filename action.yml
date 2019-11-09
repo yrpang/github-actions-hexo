@@ -30,6 +30,16 @@ inputs:
     description: 'Whether update cloudflare'
     required: false
     default: false
+  cloudflare_api_key: 
+    description: 'Your cloudflare api key'
+    required: false
+  cloudflare_zone:
+    description: 'the cloudflare zone'
+    required: false
+  cloudflare_username:
+    description: 'Your cloudflare user name'
+    required: false
+  
 runs:
   using: 'docker'
   image: 'Dockerfile'
