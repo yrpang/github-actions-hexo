@@ -6,7 +6,7 @@ The GitHub Actions for automatic generate and deploy hexo-based blog.
 
 - Update source files after hexo g
 
-- Clean CloudFlare cached after deploy(Only support clear all. You can try [Cloudflare Purge Cache](https://github.com/marketplace/actions/cloudflare-purge-cache))
+- Clean CloudFlare cached after deploy(Only support CloudFlare Token. For more you can try [Cloudflare Purge Cache](https://github.com/marketplace/actions/cloudflare-purge-cache))
 
 ## Usage
 
@@ -65,9 +65,8 @@ jobs:
 | github_token         | secrets |          |          | Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }} |
 | branch               | string  |          | 'master' | The branch of the blog source code                                      |
 | if_update_cloudflare | boolean |          | false    | Whether update cloudflare                                               |
-| cloudflare_api_key   | secrets |          |          | Your cloudflare api key                                                 |
-| cloudflare_zone      | string  |          |          | he cloudflare zone                                                      |
-| cloudflare_username  | string  |          |          | Your cloudflare user name                                               |
+| cloudflare_zone      | string  |          |          | the cloudflare zone                                                     |
+| cloudflare_token     | secrets |          |          | Your cloudflare token                                                   |
 
 ### License
 

@@ -37,13 +37,37 @@ fi
 
 # Purge cache in CloudFlare
 if ${INPUT_IF_UPDATE_CLOUDFLARE}; then
-    [ -z "${INPUT_CLOUDFLARE_API_KEY}" ] && {
+    [ -z "${INPUT_CLOUDFLARE_TOKEN}" ] && {
         echo 'Missing input cloudflare api key'
         exit 1
     }
-    curl -X POST "https://api.cloudflare.com/client/v4/zones/${INPUT_CLOUDFLARE_ZONE}/purge_cache" \
-        -H "X-Auth-Email: ${INPUT_CLOUDFLARE_USERNAME}" \
-        -H "X-Auth-Key:  ${INPUT_CLOUDFLARE_API_KEY}" \
-        -H "Content-Type: application/json" \
-        --data '{"purge_everything":true}'
+    if [ -n "${INPUT_PURGE_LIST}" ]; then
+        HTTP_RESPONSE=$(curl -sS "https://api.cloudflare.com/client/v4/zones/${INPUT_CLOUDFLARE_ZONE}/purge_cache" \
+            -H "Authorization: Bearer ${INPUT_CLOUDFLARE_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -w "HTTPSTATUS:%{http_code}" \
+            --data '{"files":'"${INPUT_PURGE_LIST}"'}')
+    else
+        HTTP_RESPONSE=$(curl -sS "https://api.cloudflare.com/client/v4/zones/${INPUT_CLOUDFLARE_ZONE}/purge_cache" \
+            -H "Authorization: Bearer ${INPUT_CLOUDFLARE_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -w "HTTPSTATUS:%{http_code}" \
+            --data '{"purge_everything":true}')
+    fi
+
+    # curl-get-status-code-and-response-body
+    # https://gist.github.com/maxcnunes/9f77afdc32df354883df
+
+    HTTP_BODY=$(echo "${HTTP_RESPONSE}" | sed -E 's/HTTPSTATUS\:[0-9]{3}$//')
+    HTTP_STATUS=$(echo "${HTTP_RESPONSE}" | tr -d '\n' | sed -E 's/.*HTTPSTATUS:([0-9]{3})$/\1/')
+
+    # example using the status
+    if [ "${HTTP_STATUS}" -eq "200" ]; then
+        echo "Clear successful!"
+        exit 0
+    else
+        echo "Something was wrong, error info:"
+        echo "${HTTP_BODY}"
+        exit 1
+    fi
 fi
