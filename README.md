@@ -56,18 +56,18 @@ jobs:
 
 ### Inputs
 
-| name                 | value   | default  | description                                                             |
-|----------------------|---------|----------|-------------------------------------------------------------------------|
-| deploykey            | string  |          | The deploy key of your GitHub Page repository                          |
-| username             | string  |          | Your user name                                                          |
-| email                | string  |          | Your email address                                                      |
-| if_update_files      | boolean | false    | Whether update the source file after generate                           |
-| github_token         | string  |          | Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }} |
-| branch               | string  | 'master' | The branch of the blog source code                                      |
-| if_update_cloudflare | boolean | false    | Whether update cloudflare                                               |
-| cloudflare_api_key   | string  |          | Your cloudflare api key                                                 |
-| cloudflare_zone      | string  |          | he cloudflare zone                                                      |
-| cloudflare_username  | string  |          | Your cloudflare user name                                               |
+| Name                 | Type    | Required | Default  | Description                                                             |
+|----------------------|---------|----------|----------|-------------------------------------------------------------------------|
+| deploykey            | secrets | **Yes**  |          | The deploy key of your GitHub Page repository                           |
+| username             | string  | **Yes**  |          | Your user name                                                          |
+| email                | string  | **Yes**  |          | Your email address                                                      |
+| if_update_files      | boolean |          | false    | Whether update the source file after generate                           |
+| github_token         | secrets |          |          | Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }} |
+| branch               | string  |          | 'master' | The branch of the blog source code                                      |
+| if_update_cloudflare | boolean |          | false    | Whether update cloudflare                                               |
+| cloudflare_api_key   | secrets |          |          | Your cloudflare api key                                                 |
+| cloudflare_zone      | string  |          |          | he cloudflare zone                                                      |
+| cloudflare_username  | string  |          |          | Your cloudflare user name                                               |
 
 ### License
 
