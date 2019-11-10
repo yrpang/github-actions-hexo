@@ -6,7 +6,7 @@ The GitHub Actions for automatic generate and deploy hexo-based blog.
 
 - Update source files after hexo g
 
-- Clean CloudFlare cached after deploy
+- Clean CloudFlare cached after deploy(Only support clear all. You can try [Cloudflare Purge Cache](https://github.com/marketplace/actions/cloudflare-purge-cache))
 
 ## Usage
 
