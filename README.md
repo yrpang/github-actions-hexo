@@ -1,12 +1,12 @@
 # Github Action for Hexo
 
-The GitHub Actions for automatic generate and publish hexo-based blog.
+The GitHub Actions for automatic generate and deploy hexo-based blog.
 
-features:
+**Features:**
 
-- update source files after hexo g
+- Update source files after hexo g
 
-- clean CloudFlare cached after publish
+- Clean CloudFlare cached after deploy
 
 ## Usage
 
@@ -28,7 +28,7 @@ deploy:
 
 - Apply a DEPLOY_KEY for the repository of your GitHub Page
 
-- (if use cloudflare)Apply a CLOUDFLARE_API_KEY
+- (*Use Cloudflare Only*)Apply a CLOUDFLARE_API_KEY
 
 ### Example Workflow file
 
@@ -48,7 +48,7 @@ jobs:
           path: node_modules
           key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
       - uses: yrpang/github-actions-hexo@master
-        with: 
+        with:
           deploykey: ${{secrets.DEPLOY_KEY}}
           username: YOUR_USER_NAME
           email: YOUR_EMAIL_ADDRESS
@@ -58,7 +58,7 @@ jobs:
 
 | name                 | value   | default  | description                                                             |
 |----------------------|---------|----------|-------------------------------------------------------------------------|
-| deploykey            | string  |          | The develop key of your GitHub Page repository                          |
+| deploykey            | string  |          | The deploy key of your GitHub Page repository                          |
 | username             | string  |          | Your user name                                                          |
 | email                | string  |          | Your email address                                                      |
 | if_update_files      | boolean | false    | Whether update the source file after generate                           |

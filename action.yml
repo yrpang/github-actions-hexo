@@ -1,8 +1,8 @@
-name: 'GitHub actions hexo'
-description: 'A GitHub action used to automatic generate publish hexo-based blog and clear Cloudflare cache.'
+name: 'Hexo GitHub Action'
+description: 'A GitHub action used to automatic generate and deploy hexo-based blog.'
 author: 'yrpang'
 branding:
-  icon: cloud
+  icon: upload-cloud
   color: green
 inputs:
   deploykey:

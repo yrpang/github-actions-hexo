@@ -1,15 +1,15 @@
 FROM node:12-alpine
 
-LABEL "name"="GitHub-actions-hexo"
+LABEL "name"="hexo-github-action"
 LABEL "maintainer"="yrpang <yrpang@outlook.com>"
-LABEL "version"="0.0.1"
+LABEL "version"="0.1.0"
 
-LABEL "com.github.actions.name"="GitHub actions hexo"
-LABEL "com.github.actions.description"="A GitHub action used to automatic generate publish hexo-based blog and clear Cloudflare cache."
-LABEL "com.github.actions.icon"="cloud"
+LABEL "com.github.actions.name"="Hexo GitHub Action"
+LABEL "com.github.actions.description"="A GitHub action used to automatic generate and deploy hexo-based blog."
+LABEL "com.github.actions.icon"="upload-cloud"
 LABEL "com.github.actions.color"="green"
 
-COPY README.md entrypoint.sh /
+COPY README.md LICENSE entrypoint.sh /
 
 RUN apk add --no-cache git
 RUN apk add --no-cache openssh
