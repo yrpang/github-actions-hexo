@@ -11,12 +11,12 @@ git config --global user.name "${INPUT_USERNAME}"
 git config --global user.email "${INPUT_EMAIL}"
 
 # setup hexo env
-npm install -g hexo-cli
+npm install hexo-cli
 npm install
 
 # generate&publish
-hexo g
-hexo d
+npx hexo g
+npx hexo d
 
 # update files
 INPUT_BRANCH=${INPUT_BRANCH:-master}
