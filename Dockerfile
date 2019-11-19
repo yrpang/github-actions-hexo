@@ -1,4 +1,4 @@
-FROM node:13-alpine
+FROM node:12-alpine
 
 LABEL "name"="hexo-github-action"
 LABEL "maintainer"="yrpang <yrpang@outlook.com>"
