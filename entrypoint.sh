@@ -15,8 +15,8 @@ npm install hexo-cli -g
 npm install
 
 # generate&publish
-npx hexo g
-npx hexo d
+hexo g
+hexo d
 
 # update files
 INPUT_BRANCH=${INPUT_BRANCH:-master}
