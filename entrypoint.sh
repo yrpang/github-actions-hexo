@@ -11,7 +11,7 @@ git config --global user.name "${INPUT_USERNAME}"
 git config --global user.email "${INPUT_EMAIL}"
 
 # setup hexo env
-npm install hexo-cli -g
+npm install -g hexo-cli
 npm install
 
 # generate&publish
