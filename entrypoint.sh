@@ -30,6 +30,7 @@ if ${INPUT_IF_UPDATE_FILES}; then
     if [ -z "$(git status --porcelain)" ]; then
         echo "nothing to update."
     else
+        git add .
         git commit -m "triggle by commit ${GITHUB_SHA}" -a
         git push "${remote_repo}" HEAD:${INPUT_BRANCH}
     fi
