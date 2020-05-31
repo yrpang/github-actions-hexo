@@ -11,13 +11,13 @@ The GitHub Actions for automatic generate and deploy hexo-based blog.
 ## Usage
 
 Before using this action, please config hexo env locally and install `hexo-deployer-git` plugin.
-The official reference documentation of the plugin is [https://hexo.io/docs/deployment.html](https://hexo.io/docs/deployment.html)
+The official reference documentation of the plugin is [https://hexo.io/docs/one-command-deployment#Git](https://hexo.io/docs/one-command-deployment#Git)
 
 e.g.
 
 ```yml
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html
+## Docs: https://hexo.io/docs/one-command-deployment#Git
 deploy:
   type: git
   repo: git@github.com:yrpang/yrpang.github.io.git
