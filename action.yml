@@ -39,6 +39,9 @@ inputs:
   cloudflare_username:
     description: 'Your cloudflare user name'
     required: false
+  purge_list:
+    description: 'purge list'
+    required: false
   
 runs:
   using: 'docker'
