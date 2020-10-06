@@ -30,7 +30,7 @@ inputs:
     description: 'Whether update cloudflare'
     required: false
     default: false
-  cloudflare_api_key: 
+  cloudflare_token: 
     description: 'Your cloudflare api key'
     required: false
   cloudflare_zone:
