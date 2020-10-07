@@ -14,6 +14,10 @@ inputs:
   email:
     description: 'Your email address'
     required: true
+  if_keep_commit_history:
+    description: 'Whether keep commit history'
+    required: false
+    default: false
   if_update_files:
     description: 'Whether update the source file after generate'
     required: false

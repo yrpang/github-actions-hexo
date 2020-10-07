@@ -47,7 +47,7 @@ jobs:
         with:
           path: node_modules
           key: ${{runner.OS}}-${{hashFiles('**/package-lock.json')}}
-      - uses: yrpang/github-actions-hexo@v1.2
+      - uses: yrpang/github-actions-hexo@v1.3
         with:
           deploykey: ${{secrets.DEPLOY_KEY}}
           username: YOUR_USER_NAME
@@ -56,17 +56,18 @@ jobs:
 
 ### Inputs
 
-| Name                 | Type    | Required | Default  | Description                                                             |
-|----------------------|---------|----------|----------|-------------------------------------------------------------------------|
-| deploykey            | secrets | **Yes**  |          | The deploy key of your GitHub Page repository                           |
-| username             | string  | **Yes**  |          | Your user name                                                          |
-| email                | string  | **Yes**  |          | Your email address                                                      |
-| if_update_files      | boolean |          | false    | Whether update the source file after generate                           |
-| github_token         | secrets |          |          | Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }} |
-| branch               | string  |          | 'master' | The branch of the blog source code                                      |
-| if_update_cloudflare | boolean |          | false    | Whether update cloudflare                                               |
-| cloudflare_zone      | string  |          |          | the cloudflare zone                                                     |
-| cloudflare_token     | secrets |          |          | Your cloudflare token                                                   |
+| Name                   | Type    | Required | Default  | Description                                                             |
+| ---------------------- | ------- | -------- | -------- | ----------------------------------------------------------------------- |
+| deploykey              | secrets | **Yes**  |          | The deploy key of your GitHub Page repository                           |
+| username               | string  | **Yes**  |          | Your user name                                                          |
+| email                  | string  | **Yes**  |          | Your email address                                                      |
+| if_keep_commit_history | boolean |          | false    | Whether keep commit history                                             |
+| if_update_files        | boolean |          | false    | Whether update the source file after generate                           |
+| github_token           | secrets |          |          | Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }} |
+| branch                 | string  |          | 'master' | The branch of the blog source code                                      |
+| if_update_cloudflare   | boolean |          | false    | Whether update cloudflare                                               |
+| cloudflare_zone        | string  |          |          | the cloudflare zone                                                     |
+| cloudflare_token       | secrets |          |          | Your cloudflare token                                                   |
 
 ### License
 
