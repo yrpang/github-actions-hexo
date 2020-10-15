@@ -9,11 +9,13 @@ inputs:
     description: 'The develop key of your GitHub Page repository'
     required: true
   username:
-    description: 'Your user name'
-    required: true
+    description: "The publisher's username"
+    required: false
+    default: 'github-actions[bot]'
   email:
-    description: 'Your email address'
-    required: true
+    description: "The publisher's email address"
+    required: false
+    default: '41898282+github-actions[bot]@users.noreply.github.com'
   if_keep_commit_history:
     description: 'Whether keep commit history'
     required: false

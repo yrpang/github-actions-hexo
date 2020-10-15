@@ -50,8 +50,8 @@ jobs:
       - uses: yrpang/github-actions-hexo@v1.3
         with:
           deploykey: ${{secrets.DEPLOY_KEY}}
-          username: YOUR_USER_NAME
-          email: YOUR_EMAIL_ADDRESS
+          username: PUBLISHER_USER_NAME
+          email: PUBLISHER_EMAIL_ADDRESS
 ```
 
 ### Inputs
@@ -59,8 +59,8 @@ jobs:
 | Name                   | Type    | Required | Default  | Description                                                             |
 | ---------------------- | ------- | -------- | -------- | ----------------------------------------------------------------------- |
 | deploykey              | secrets | **Yes**  |          | The deploy key of your GitHub Page repository                           |
-| username               | string  | **Yes**  |          | Your user name                                                          |
-| email                  | string  | **Yes**  |          | Your email address                                                      |
+| username               | string  |          | 'github-actions[bot]' | The publisher's username                                   |
+| email                  | string  |          | '41898282+github-actions[bot]@users.noreply.github.com' | The publisher's email address|
 | if_keep_commit_history | boolean |          | false    | Whether keep commit history                                             |
 | if_update_files        | boolean |          | false    | Whether update the source file after generate                           |
 | github_token           | secrets |          |          | Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }} |
