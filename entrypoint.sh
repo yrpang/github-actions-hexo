@@ -18,7 +18,7 @@ npm install
 hexo g
 
 if ${INPUT_IF_KEEP_COMMIT_HISTORY}; then
-    git clone https://github.com/${INPUT_USERNAME}/${INPUT_USERNAME}.github.io.git .deploy_git
+    git clone https://github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git .deploy_git
 fi
 
 hexo d
