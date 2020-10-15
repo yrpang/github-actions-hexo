@@ -1,5 +1,4 @@
 #!/bin/sh
-set -e
 
 # setup key
 mkdir -p /root/.ssh/
@@ -18,7 +17,11 @@ npm install
 hexo g
 
 if ${INPUT_IF_KEEP_COMMIT_HISTORY}; then
-    git clone https://github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git .deploy_git
+    if [ -n "${INPUT_GITHUB_PAGE_REPOSITORY}" ]; then
+        git clone --branch master "https://github.com/${GITHUB_ACTOR}/${INPUT_GITHUB_PAGE_REPOSITORY}.git" .deploy_git
+    else
+        git clone --branch master "https://github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" .deploy_git
+    fi
 fi
 
 hexo d
