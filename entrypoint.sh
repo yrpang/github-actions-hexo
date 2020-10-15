@@ -18,9 +18,9 @@ hexo g
 
 if ${INPUT_IF_KEEP_COMMIT_HISTORY}; then
     if [ -n "${INPUT_GITHUB_PAGE_REPOSITORY}" ]; then
-        git clone --branch master "https://github.com/${GITHUB_ACTOR}/${INPUT_GITHUB_PAGE_REPOSITORY}.git" .deploy_git
+        git clone --branch "${INPUT_GITHUB_PAGE_REPOSITORY_BRANCH}" "https://github.com/${GITHUB_ACTOR}/${INPUT_GITHUB_PAGE_REPOSITORY}.git" .deploy_git
     else
-        git clone --branch master "https://github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" .deploy_git
+        git clone --branch "${INPUT_GITHUB_PAGE_REPOSITORY_BRANCH}" "https://github.com/${GITHUB_ACTOR}/${GITHUB_ACTOR}.github.io.git" .deploy_git
     fi
 fi
 

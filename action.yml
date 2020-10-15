@@ -22,8 +22,13 @@ inputs:
     default: false
   github_page_repository:
     description: >
-      When `if_keep_commit_history` is `ture` and the GitHub Page repository is not `<actor_username>.github.io`, you need to set the other GitHub Page repository for get the commit history.
+      When `if_keep_commit_history` is `ture` and the GitHub Page repository (branch) is not `<actor_username>.github.io`, you need to set the other GitHub Page repository (branch) for get the commit history.
     required: false
+  github_page_repository_branch:
+    description: >
+      When `if_keep_commit_history` is `ture` and the GitHub Page repository (branch) is not `<actor_username>.github.io`, you need to set the other GitHub Page repository (branch) for get the commit history.
+    required: false
+    default: 'master'
   if_update_files:
     description: 'Whether update the source file after generate'
     required: false

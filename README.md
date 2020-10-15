@@ -62,7 +62,8 @@ jobs:
 | username               | string  |          | 'github-actions[bot]' | The publisher's username                                   |
 | email                  | string  |          | '41898282+github-actions[bot]@users.noreply.github.com' | The publisher's email address|
 | if_keep_commit_history | boolean |          | false    | Whether keep commit history                                             |
-| github_page_repository | string  |          |          | When `if_keep_commit_history` is `ture` and the GitHub Page repository is not `<actor_username>.github.io`, you need to set the other GitHub Page repository for get the commit history.|
+| github_page_repository | string  |          |          | When `if_keep_commit_history` is `ture` and the GitHub Page repository (branch) is not `<actor_username>.github.io`, you need to set the other GitHub Page repository (branch) for get the commit history.|
+| github_page_repository_branch | string  |          | 'master' | When `if_keep_commit_history` is `ture` and the GitHub Page repository (branch) is not `<actor_username>.github.io`, you need to set the other GitHub Page repository (branch) for get the commit history.|
 | if_update_files        | boolean |          | false    | Whether update the source file after generate                           |
 | github_token           | secrets |          |          | Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }} |
 | branch                 | string  |          | 'master' | The branch of the blog source code                                      |
